@@ -68,6 +68,7 @@ public class BasicNavigations {
         currentURL = driver.getCurrentUrl();
         System.out.println("currentURL = " + currentURL);
 
+
         //this will close the currently opened window
         driver.close();
 
