@@ -26,7 +26,16 @@ public class T1_CydeoVerifications {
             System.out.println("URL Fail");
         }
 
-        driver.quit();
+        String expectedTitle = "Practice";
+        String actualTitle = driver.getTitle();
+
+        if (actualTitle.equals(actualTitle)){
+            System.out.println("Title pass");
+        }else{
+            System.out.println("Title fail");
+        }
+
+        driver.close();
 
 
 
