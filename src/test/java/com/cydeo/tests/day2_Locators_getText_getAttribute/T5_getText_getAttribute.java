@@ -40,6 +40,11 @@ public class T5_getText_getAttribute {
         String expectedPlaceHolder = "first name";
         String actualPlaceHolder = inputBox.getAttribute("placeholder");
 
+        if (actualPlaceHolder.equals(expectedPlaceHolder)){
+            System.out.println("Placer Holder is Passed");
+        }else{
+            System.out.println("Place Holder verification failed");
+        }
         driver.close();
 
     }
