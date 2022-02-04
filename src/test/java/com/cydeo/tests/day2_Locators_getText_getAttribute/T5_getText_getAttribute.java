@@ -23,7 +23,7 @@ public class T5_getText_getAttribute {
         //Expected: Registration form
         WebElement headerText = driver.findElement(By.tagName("h2"));
         String expectedHeaderText = "Registration form";
-        String actualHeaderText = headerText.getText();
+        String actualHeaderText = headerText.getText(); //will return Registration form as a string
 
         if (actualHeaderText.equals(expectedHeaderText)){
             System.out.println("Header Text Passed");
