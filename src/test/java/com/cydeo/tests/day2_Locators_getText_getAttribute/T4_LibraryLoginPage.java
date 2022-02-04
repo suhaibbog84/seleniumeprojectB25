@@ -1,7 +1,9 @@
 package com.cydeo.tests.day2_Locators_getText_getAttribute;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class T4_LibraryLoginPage {
@@ -18,7 +20,8 @@ public class T4_LibraryLoginPage {
         driver.get("https://library2.cybertekschool.com/login.html");
 
         //3. Enter username: “incorrect@email.com”
-
+        WebElement userNameInput = driver.findElement(By.className("form-control"));
+        userNameInput.sendKeys("Incorrect@gmail.com");
 
         //4. Enter password: “incorrect password”
 
