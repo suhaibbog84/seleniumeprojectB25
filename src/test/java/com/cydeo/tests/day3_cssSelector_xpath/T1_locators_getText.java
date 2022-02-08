@@ -14,7 +14,7 @@ public class T1_locators_getText {
             //1- Open a Chrome browser
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
 
             //2- Go to: https://login1.nextbasecrm.com/
         driver.get("https://login1.nextbasecrm.com/");
@@ -24,7 +24,13 @@ public class T1_locators_getText {
         inputUsername.sendKeys("incorrect");
 
             //4- Enter incorrect password: “incorrect”
+        WebElement passwordInput = driver.findElement(By.name("USER_PASSWORD"));
+        passwordInput.sendKeys("incorrect");
+
             //5- Click to log in button.
+        WebElement loginButton = driver.findElement(By.className("login-btn"));
+        loginButton.click();
+
             //6- Verify error message text is as expected:
             //Expected: Incorrect login or password
 
