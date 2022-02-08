@@ -50,7 +50,7 @@ public class T2_getText_getAttribute {
         String expectedInHref = "forgot_password=yes";
         String actualHrefAttributeValue = forgotPasswordLink.getAttribute("href");
 
-        if (actualHrefAttributeValue.equalsIgnoreCase(expectedInHref)){
+        if (actualHrefAttributeValue.contains(expectedInHref)){
             System.out.println("Href attribute value verification PASSED");
         }else{
             System.out.println("Href attribute value verification FAILED");
