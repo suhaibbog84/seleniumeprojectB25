@@ -33,6 +33,16 @@ public class T1_locators_getText {
 
             //6- Verify error message text is as expected:
             //Expected: Incorrect login or password
+        WebElement errorMessage = driver.findElement(By.className("errortext"));\
+
+        String expectedErrorMessage = "Incorrect login or password";
+        String actualErrorMessage = errorMessage.getText();
+
+        if (actualErrorMessage.equals(expectedErrorMessage)){
+            System.out.println("Error message test passed");
+        }else{
+            System.out.println("Error message test failed");
+        }
 
 
         }
