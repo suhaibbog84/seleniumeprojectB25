@@ -37,9 +37,9 @@ public class T2_getText_getAttribute {
         String actualForgotPasswordLinkText = forgotPasswordLink.getText();
 
         if (actualForgotPasswordLinkText.equals(expectedForgotPasswordLinkText)){
-            System.out.println("Forgot password link verification passed");
+            System.out.println("Forgot password link verification PASSED");
         }else{
-            System.out.println("Forgot password link verification failed");
+            System.out.println("Forgot password link verification FAILED");
         }
 
         //5- Verify “forgot password” href attribute’s value contains expected:
