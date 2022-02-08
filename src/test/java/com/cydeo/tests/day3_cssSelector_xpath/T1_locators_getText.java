@@ -44,6 +44,7 @@ public class T1_locators_getText {
             System.out.println("Error message test failed");
         }
 
+        driver.close();
 
         }
 }
