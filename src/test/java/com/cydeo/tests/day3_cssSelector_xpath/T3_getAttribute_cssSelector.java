@@ -42,6 +42,8 @@ public class T3_getAttribute_cssSelector {
             System.out.println("Log In button text verification FAILED!");
         }
 
+        driver.close();
+
     }
 
 
