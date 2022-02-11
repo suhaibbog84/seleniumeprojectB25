@@ -41,6 +41,20 @@ public class T5_checkboxes {
         //7. Confirm checkbox #2 is NOT selected.
         System.out.println("checkbox2.isSelected() = " + checkbox2.isSelected());
 
+        /*
+         if(checkBox1.isSelected()){
+           System.out.println("Verication passed");
+       }else{
+           System.out.println("verification fail");
+       }
+       //   7. Confirm checkbox #2 is NOT selected.
+
+        if(!checkBox2.isSelected()){
+           System.out.println("verification passed");
+       }else{
+           System.out.println("verification fail");
+       }
+         */
 
         Thread.sleep(3000);
         driver.quit();
