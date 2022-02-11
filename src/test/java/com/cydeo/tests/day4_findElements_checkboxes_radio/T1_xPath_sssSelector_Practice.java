@@ -1,7 +1,9 @@
 package com.cydeo.tests.day4_findElements_checkboxes_radio;
 
 import com.cydeo.utilities.WebDriverFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class T1_xPath_sssSelector_Practice {
 
@@ -19,7 +21,16 @@ public class T1_xPath_sssSelector_Practice {
 
         //3. Locate all the WebElements on the page using XPATH and/or CSS
         //locator only (total of 6)
-        //a. “Home” link
+        //a. “Home” link... locate homeLink using cssSe - class value
+        WebElement homeLink_ex1 = driver.findElement(By.cssSelector("a.nav-link"));
+
+        //syntax #2 locating the home button using class value
+        WebElement homeLink_ex2 = driver.findElement(By.cssSelector("a[class='nav-link']"));
+
+        //locate home link using cssS using href
+        WebElement homeLink_ex3 = driver.findElement(By.cssSelector("a[href='/']"));
+
+
         //b. “Forgot password” header
         //c. “E-mail” text
         //d. E-mail input box
