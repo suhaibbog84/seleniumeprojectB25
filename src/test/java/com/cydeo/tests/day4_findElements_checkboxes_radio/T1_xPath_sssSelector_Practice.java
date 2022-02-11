@@ -48,11 +48,24 @@ public class T1_xPath_sssSelector_Practice {
         //locate inputBox using xPath by contains method
         WebElement inputBox_ex2 = driver.findElement(By.xpath("//input[contains(@pattern,'a-z0-9')]"));
 
-        //e. “Retrieve password” button
-        WebElement retrievePasswordBtn = driver.findElement(By.xpath("//button/i[.='Retrieve password']"));
+        //e. “Retrieve password” button ex_1
+        WebElement retrievePasswordBtn_ex1 = driver.findElement(By.xpath("//button/i[.='Retrieve password']"));
+
+        //locate and retrieve the password button ex_2
+        WebElement retrievePasswordBtn_ex2 = driver.findElement(By.xpath("//button[@id='form_submit']"));
 
         //f. “Powered by Cydeo text
+        WebElement poweredByCydeoText = driver.findElement(By.xpath("//div[@style= 'text-align: center;']"));
+
         //4. Verify all web elements are displayed.
+        System.out.println("homeLink_ex1.isDisplayed() = " + homeLink_ex1.isDisplayed());
+        System.out.println("header_ex1.isDisplayed() = " + header_ex1.isDisplayed());
+        System.out.println("emailLabel.isDisplayed() = " + emailLabel.isDisplayed());
+        System.out.println("inputBox_ex1.isDisplayed() = " + inputBox_ex1.isDisplayed());
+        System.out.println("retrievePasswordBtn_ex1.isDisplayed() = " + retrievePasswordBtn_ex1.isDisplayed());
+        System.out.println("poweredByCydeoText.isDisplayed() = " + poweredByCydeoText.isDisplayed());
+
+
         //First solve the task with using cssSelector only. Try to create 2 different
         //cssSelector if possible
         //
