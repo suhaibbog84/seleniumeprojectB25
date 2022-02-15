@@ -17,7 +17,7 @@ public class TestNG_Selenium {
     public void setUpMethod(){
         //Do browser driver setup
         //Open browser
-        WebDriver driver = WebDriverFactory.getDriver("chrome");
+        driver = WebDriverFactory.getDriver("chrome");
 
         //Maximize the page
         //driver.manage().window().maximize();
