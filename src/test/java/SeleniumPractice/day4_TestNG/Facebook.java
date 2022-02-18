@@ -38,6 +38,8 @@ public class Facebook {
         Assert.assertEquals(actualTitle, expectedTitle);
     }
 
+    @Test
+
     public void incorrectLogIn(){
 
         WebElement userNameBox = driver.findElement(By.cssSelector("input#email"));
@@ -56,6 +58,8 @@ public class Facebook {
 
     }
 
+    @Test
+
     public void fbHeaderVerify(){
 
          String expectedHeaderText = "Connect with friends and the world around you on Facebook.";
@@ -63,6 +67,8 @@ public class Facebook {
 
          Assert.assertEquals(actualHeaderText, expectedHeaderText);
     }
+
+    @Test
 
     public void registrationLinkVerification(){
 
