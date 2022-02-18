@@ -28,7 +28,7 @@ public class T5_Window_Practice {
 
     //2. Create new test and make set ups
     @Test
-    public void multiple_window_test(){
+    public void multiple_window_test() throws InterruptedException {
 
         //storing the main pages window handle is a good practice
         // for future practice re-usable purposes
@@ -42,15 +42,25 @@ public class T5_Window_Practice {
 
         Assert.assertEquals(actualTitle, expectedTitle);
 
+        System.out.println("actualTitle before the click = " + actualTitle);
+
         //5. Click to: “Click Here” link
         WebElement clickHereLink = driver.findElement(By.linkText("Click Here"));
 
         clickHereLink.click();
 
+        System.out.println("actualTitle after the click = " + actualTitle);
+        //to double-check where is the iframe is looking
+        // we print the title before and after
+
         //6. Switch to new Window.
 
 
         //7. Assert: Title is “New Window”
+
+
+        Thread.sleep(2000);
+        driver.quit();
 
     }
 
