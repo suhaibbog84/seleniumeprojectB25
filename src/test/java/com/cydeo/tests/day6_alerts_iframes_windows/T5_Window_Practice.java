@@ -62,8 +62,11 @@ public class T5_Window_Practice {
 
         //7. Assert: Title is “New Window”
 
-
+        String expectedTitleAfterClick = "New Window";
         actualTitle = driver.getTitle();
+
+        Assert.assertEquals(actualTitle, expectedTitleAfterClick);
+
         System.out.println("actualTitle after the click = " + actualTitle);
 
         Thread.sleep(2000);
