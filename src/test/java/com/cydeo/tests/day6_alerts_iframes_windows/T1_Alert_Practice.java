@@ -5,6 +5,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -41,9 +42,15 @@ public class T1_Alert_Practice {
         alert.accept();
 
         //5. Verify “You successfully clicked an alert” text is displayed.
-        WebElement resultTest = driver.findElement(By.xpath("//p[@id='result']"));
+        WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
 
+        //Failure message will only be displayed if the assetion fails:
+        Assert.assertTrue(resultText.isDisplayed(), "Result text is NOT displayed.");
 
+        String expectedText = "You successfully clicked an alert";
+        String actualText = resultText.getText();
+
+        Assert.assertEquals(actualText, expectedText, "Actual result test is NOT as expected!!!");
 
         Thread.sleep(2000);
         driver.quit();
