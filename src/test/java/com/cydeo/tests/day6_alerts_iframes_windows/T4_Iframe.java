@@ -4,6 +4,7 @@ import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -38,7 +39,7 @@ public class T4_Iframe {
         WebElement yourContentHereText = driver.findElement(By.xpath("//p"));
 
         //4. Assert: “Your content goes here.” Text is displayed.
-
+        Assert.assertTrue(yourContentHereText.isDisplayed());
 
         //5. Assert: “An iFrame containing the TinyMCE WYSIWYG Editor”
 
