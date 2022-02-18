@@ -49,15 +49,22 @@ public class T5_Window_Practice {
 
         clickHereLink.click();
 
-        System.out.println("actualTitle after the click = " + actualTitle);
         //to double-check where is the iframe is looking
         // we print the title before and after
 
         //6. Switch to new Window.
+        for (String each : driver.getWindowHandles()){
 
+            driver.switchTo().window(each);
+            System.out.println("Current title while switching windows: " + driver.getTitle());
+
+        }
 
         //7. Assert: Title is “New Window”
 
+
+        actualTitle = driver.getTitle();
+        System.out.println("actualTitle after the click = " + actualTitle);
 
         Thread.sleep(2000);
         driver.quit();
