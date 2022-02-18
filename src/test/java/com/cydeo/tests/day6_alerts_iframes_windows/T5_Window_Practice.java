@@ -1,7 +1,9 @@
 package com.cydeo.tests.day6_alerts_iframes_windows;
 
 import com.cydeo.utilities.WebDriverFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -22,9 +24,7 @@ public class T5_Window_Practice {
 
         //3. Go to : https://practice.cydeo.com/windows
         driver.get("https://practice.cydeo.com/windows");
-
     }
-
 
     //2. Create new test and make set ups
     @Test
@@ -43,7 +43,9 @@ public class T5_Window_Practice {
         Assert.assertEquals(actualTitle, expectedTitle);
 
         //5. Click to: “Click Here” link
+        WebElement clickHereLink = driver.findElement(By.linkText("Click Here"));
 
+        clickHereLink.click();
 
         //6. Switch to new Window.
 
