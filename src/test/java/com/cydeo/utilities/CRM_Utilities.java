@@ -9,11 +9,11 @@ public class CRM_Utilities {
     //This method will login with helpdesk1@cybertekschool.com
     // user when it's called
 
-    public static void crm_login(WebDriver driver){
+    public static void crm_login(WebDriver driver, String username, String password){
 
         //3. Enter valid username
         WebElement inputUsername = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
-        inputUsername.sendKeys("helpdesk1@cybertekschool.com ");
+        inputUsername.sendKeys(username);
 
         //USERNAME
         //helpdesk1@cybertekschool.com  UserUser
@@ -21,7 +21,7 @@ public class CRM_Utilities {
 
         //4. Enter valid password
         WebElement inputPassword = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
-        inputPassword.sendKeys("UserUser");
+        inputPassword.sendKeys(password);
 
         //5. Click to Log In button
         WebElement loginButton = driver.findElement(By.xpath("//input[@value='Log In']"));
