@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -53,11 +54,11 @@ public class T5_Window_Practice {
         // we print the title before and after
 
         //6. Switch to new Window.
+        //Set<String> allWindowHandles = driver.getWindowHandles();
         for (String each : driver.getWindowHandles()){
 
             driver.switchTo().window(each);
             System.out.println("Current title while switching windows: " + driver.getTitle());
-
         }
 
         //7. Assert: Title is “New Window”
@@ -69,9 +70,11 @@ public class T5_Window_Practice {
 
         System.out.println("actualTitle after the click = " + actualTitle);
 
-        Thread.sleep(2000);
-        driver.quit();
+    }
 
+    @AfterMethod
+    public void tearDown(){
+        driver.quit();
     }
 
 

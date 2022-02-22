@@ -1,4 +1,4 @@
-package SeleniumPractice;
+package SeleniumPractice.day1_Practice;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
