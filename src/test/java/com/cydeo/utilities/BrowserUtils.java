@@ -5,7 +5,7 @@ public class BrowserUtils {
     //this method will accept int (in seconds) and execute Thread.sleep
     //for given duration
 
-    public void sleep (int second){
+    public void sleep(int second){
         second *=1000;
         try {
             Thread.sleep(second);
