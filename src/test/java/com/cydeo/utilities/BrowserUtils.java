@@ -1,11 +1,16 @@
 package com.cydeo.utilities;
 
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import java.util.Set;
+
 public class BrowserUtils {
 
     //this method will accept int (in seconds) and execute Thread.sleep
     //for given duration
 
-    public void sleep(int second){
+    public static void sleep(int second){
         second *=1000;
         try {
             Thread.sleep(second);
@@ -15,4 +20,28 @@ public class BrowserUtils {
         }
 
     }
+
+    public static void switchWindowAndVerify(WebDriver driver, String expectedInUrl, String expectedTitle){
+
+        Set<String> allWindowsHandles = driver.getWindowHandles();
+
+        for (String each : allWindowsHandles) {
+
+            driver.switchTo().window(each);
+
+            System.out.println("Current URL: " + driver.getCurrentUrl());
+
+            if (driver.getCurrentUrl().contains("expectedInUrl")){
+                break;
+            }
+        }
+
+        //5. Assert:Title contains “expectedTitle”
+        String actualTitle = driver.getTitle();
+
+        Assert.assertTrue(actualTitle.contains(expectedTitle));
+
+    }
+
+
 }
