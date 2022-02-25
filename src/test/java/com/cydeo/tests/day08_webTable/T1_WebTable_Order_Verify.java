@@ -1,6 +1,7 @@
 package com.cydeo.tests.day08_webTable;
 
 import com.cydeo.utilities.WebDriverFactory;
+import com.cydeo.utilities.WebTableUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -48,7 +49,33 @@ public class T1_WebTable_Order_Verify {
 
         Assert.assertEquals(actualBobMartineDateCell, expectedBobMartinDateCell);
 
+    }
+
+    @Test
+    public void test2(){
+        String customerOrderDate1 = WebTableUtils.returnOrderDate(driver,"Alexandra Gray");
+        System.out.println("customerOrderDate1 = " + customerOrderDate1);
+
+        String customerOrderDate2 = WebTableUtils.returnOrderDate(driver,"John Doe");
+        System.out.println("customerOrderDate2 = " + customerOrderDate2);
 
     }
+
+    public static void orderVerify(WebDriver driver, String customerName, String expectedOrderDate){
+
+        String locator =
+
+    }
+
+    //Method #2 info:
+    //• Name: orderVerify ()
+    //• Return type: void
+    //• Arg1: WebDriver driver
+    //• Arg2: String costumerName
+    //• Arg3: String expectedOrderDate
+    //This method should accept above mentioned arguments and internally assert
+    //expectedOrderDate matching actualOrderDate.
+
+
 
 }
