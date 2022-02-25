@@ -61,20 +61,14 @@ public class T1_WebTable_Order_Verify {
 
     }
 
-    public static void orderVerify(WebDriver driver, String customerName, String expectedOrderDate){
+    @Test
+    public void test3(){
 
-        String locator =
+        WebTableUtils.orderVerify(driver, "Bart Fisher", "01/16/2021");
 
+        driver.quit();
     }
 
-    //Method #2 info:
-    //• Name: orderVerify ()
-    //• Return type: void
-    //• Arg1: WebDriver driver
-    //• Arg2: String costumerName
-    //• Arg3: String expectedOrderDate
-    //This method should accept above mentioned arguments and internally assert
-    //expectedOrderDate matching actualOrderDate.
 
 
 
