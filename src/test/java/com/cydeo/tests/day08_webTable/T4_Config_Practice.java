@@ -1,5 +1,6 @@
 package com.cydeo.tests.day08_webTable;
 
+import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -21,7 +22,9 @@ public class T4_Config_Practice {
         //1- Open a chrome browser
         //2- Go to: https://google.com/
 
-        driver = WebDriverFactory.getDriver("chrome");
+        String browserType = ConfigurationReader.getProperty("browser");
+
+        driver = WebDriverFactory.getDriver(browserType);
         //driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.google.com");
