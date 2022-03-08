@@ -32,11 +32,14 @@ public class T1_Registration_form {
         inputLastName.sendKeys(faker.name().lastName());
 
         //5. Enter username
-        WebElement inputUserName = Driver.getDriver().findElement(By.xpath("//input[@name='username']"));
-        inputUserName.sendKeys(faker.name().username());
+        WebElement userName = Driver.getDriver().findElement(By.xpath("//input[@name='username']"));
+        //or String user = faker.bothify("helpdesk###")
+        //userName.sendKeys(user);
+        userName.sendKeys(faker.name().username().replace(".", ""));
 
         //6. Enter email address
         WebElement email = Driver.getDriver().findElement(By.xpath("//input[@name='email']"));
+        //or email.sendKeys( userName + "@gmail.com
         email.sendKeys(faker.internet().emailAddress());
 
         // 7. Enter password
@@ -44,7 +47,8 @@ public class T1_Registration_form {
         password.sendKeys(faker.internet().password());
 
         // 8. Enter phone number
-
+        WebElement phoneNumber = Driver.getDriver().findElement(By.xpath("//input[@name='phone']"));
+        phoneNumber.sendKeys(faker.phoneNumber().cellPhone().replace(".", "-"));
 
         // 9. Select a gender from radio buttons
 //10. Enter date of birth
