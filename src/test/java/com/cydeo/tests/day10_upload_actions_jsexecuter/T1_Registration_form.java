@@ -5,6 +5,7 @@ import com.cydeo.utilities.Driver;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 public class T1_Registration_form {
@@ -44,20 +45,42 @@ public class T1_Registration_form {
 
         // 7. Enter password
         WebElement password = Driver.getDriver().findElement(By.xpath("//input[@name='password']"));
+        //or password.sendKeys( faker.numerify("########"));
         password.sendKeys(faker.internet().password());
 
         // 8. Enter phone number
         WebElement phoneNumber = Driver.getDriver().findElement(By.xpath("//input[@name='phone']"));
-        phoneNumber.sendKeys(faker.phoneNumber().cellPhone().replace(".", "-"));
+        //or phoneNumber.sendKeys(faker.phoneNumber().cellPhone().replace(".", "-"));
+        phoneNumber.sendKeys(faker.numerify("###-###-####"));
 
         // 9. Select a gender from radio buttons
-//10. Enter date of birth
-//11. Select Department/Office
-//12. Select Job Title
-//13. Select programming language from checkboxes
-//14. Click to sign up button
-//15. Verify success message “You’ve successfully completed registration.” is
-//displayed.
+        WebElement genderBtn = Driver.getDriver().findElement(By.xpath("//input[@value='female']"));
+        genderBtn.click();
+
+        // 10. Enter date of birth
+        WebElement dateOfBirth = Driver.getDriver().findElement(By.xpath("//input[@name='birthday']"));
+        dateOfBirth.sendKeys("03/08/2000");
+        //or faker.number().numberBetween(2004, 1920);
+
+        // 11. Select Department/Office
+        Select departmentDropdown = new Select(Driver.getDriver().findElement(By.xpath("//select[@name='department']")));
+        departmentDropdown.selectByIndex(faker.number().numberBetween(1,9));
+
+        // 12. Select Job Title
+        Select jobTitle = new Select(Driver.getDriver().findElement(By.xpath("//select[@name='job_title']")));
+        jobTitle.selectByIndex(faker.number().numberBetween(1,8));
+
+        // 13. Select programming language from checkboxes
+        WebElement programmingLanguage = Driver.getDriver().findElement(By.xpath("//label[.='Select programming languages']"));
+        programmingLanguage.click();
+
+        // 14. Click to sign up button
+
+
+        // 15. Verify success message “You’ve successfully completed registration.” is
+
+
+        // displayed.
 //
 //
 //Note:
