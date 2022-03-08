@@ -11,7 +11,6 @@ public class ConfigurationReader {
 
     static{
 
-
         try {
 
             //2- we need to open the file in java memory
