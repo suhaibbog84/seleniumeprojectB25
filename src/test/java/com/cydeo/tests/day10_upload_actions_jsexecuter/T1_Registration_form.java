@@ -13,7 +13,7 @@ public class T1_Registration_form {
         //1. Open browser
         // 2. Go to website: https://practice.cydeo.com/registration_form
 
-        Driver.getDriver().get();
+        Driver.getDriver().get("registration.form.url");
 
 //3. Enter first name
 //4. Enter last name
