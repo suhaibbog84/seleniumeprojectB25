@@ -35,7 +35,7 @@ public class T3_Actions_Hover {
 
         //3. Assert:
         //a. “name: user1” is displayed
-        //b. “view profile” is displayed
+        //b. “view profile” is displayed... it will appear once the user displayed
         Assert.assertTrue(user1.isDisplayed());
 
 
