@@ -3,7 +3,6 @@ package com.cydeo.tests.day12_pom_design_explicit_wait;
 import com.cydeo.pages.LibraryLoginPage;
 import com.cydeo.utilities.Driver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -12,14 +11,9 @@ public class POMPractices {
     LibraryLoginPage libraryLoginPage;
 
     @BeforeMethod
-    public void setUpMethod(){
+    public void setupMethod(){
         Driver.getDriver().get("https://library1.cydeo.com/");
         libraryLoginPage = new LibraryLoginPage();
-    }
-
-    @AfterMethod
-    public void tearDownMethod(){
-        Driver.closeDriver();
     }
 
     @Test
@@ -36,38 +30,46 @@ public class POMPractices {
         //Expected: This field is required.
         Assert.assertTrue(libraryLoginPage.fieldRequiredErrorMessage.isDisplayed());
 
+        Driver.closeDriver();
     }
-
+    //BREAK TIME: 2.05PM CST
     @Test
     public void invalid_email_format_error_message_test(){
         //TC #2: Invalid email format error message test
-        //1- Open a chrome browser
+        //1- Open a Chrome browser
         //2- Go to: https://library1.cydeo.com/
         //3- Enter invalid email format
 
         libraryLoginPage.inputUsername.sendKeys("somethingwrong");
+
         libraryLoginPage.signInButton.click();
 
         //4- Verify expected error is displayed:
         //Expected: Please enter a valid email address.
         Assert.assertTrue(libraryLoginPage.enterValidEmailErrorMessage.isDisplayed());
 
+        Driver.closeDriver();
+
     }
 
     @Test
-    public void negative_login(){
+    public void library_negative_login_test(){
         //TC #3: Library negative login
-        //1- Open a chrome browser
-        //2- Go to: https://library1.cydeo.com/
+        //1- Open a Chrome browser
+        //2- Go to: https://library1.cydeo.com
         //3- Enter incorrect username or incorrect password
 
         libraryLoginPage.inputUsername.sendKeys("wrong@username.com");
         libraryLoginPage.inputPassword.sendKeys("wrongpassword");
+
         libraryLoginPage.signInButton.click();
 
         //4- Verify title expected error is displayed:
         //Expected: Sorry, Wrong Email or Password
         Assert.assertTrue(libraryLoginPage.wrongEmailOrPasswordErrorMessage.isDisplayed());
+        Driver.closeDriver();
 
     }
+
+
 }
